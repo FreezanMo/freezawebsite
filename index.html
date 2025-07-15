@@ -3,925 +3,800 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freeza™ - AI-Powered Global Talent, Hiring & Learning Ecosystem</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>FREEZA – The AI-Powered Talent & Hiring Platform for Everyone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-blue: #0056b3; /* A strong blue for primary actions */
+            --secondary-grey: #e2e8f0; /* Light grey for secondary buttons/backgrounds */
+            --dark-text: #2d3748; /* Dark grey for most text */
+            --light-text: #4a5568; /* Slightly lighter grey for subheadings */
+            --white: #ffffff;
+            --light-bg: #f7fafc; /* Very light grey for section backgrounds */
+            --border-color: #cbd5e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #080a0e; /* Even darker base for depth */
-            color: #e0e6f1; /* Light text */
-            scroll-behavior: smooth;
-            /* Futuristic animated background */
-            background-image: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, rgba(8, 10, 14, 0.9) 70%),
-                              linear-gradient(135deg, #0d1117 0%, #1a202c 100%);
-            background-size: 200% 200%;
-            animation: backgroundPan 30s linear infinite alternate;
-            padding-top: 5rem; /* Space for the fixed header */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--white);
         }
 
-        @keyframes backgroundPan {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(13, 17, 23, 0.95); /* Darker, slightly transparent */
-            backdrop-filter: blur(8px); /* Glass effect */
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            padding: 1rem 1.5rem;
+        /* --- Hero Section --- */
+        .hero-section {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-section h1 {
+            font-size: 3.2em;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .hero-section h1 span {
+            display: block;
+            font-size: 0.7em;
+            color: var(--dark-text);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-section .cta-buttons {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #2d3748;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .section-container {
-            min-height: calc(100vh - 5rem); /* Adjust min-height for sections */
+        .hero-section .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .hero-section .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .hero-section .btn-primary:hover {
+            background-color: #004494; /* Darker blue on hover */
+            border-color: #004494;
+        }
+
+        .hero-section .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .hero-section .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Section Titles --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--dark-text);
+            margin-bottom: 60px;
+            font-weight: 700;
+            padding-top: 60px;
+        }
+
+        .section-title span {
+            color: var(--primary-blue);
+        }
+
+        /* --- Who Is Freeza For? Section --- */
+        .for-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .for-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .for-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .for-card h3 {
+            font-size: 1.8em;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .for-card p {
+            font-size: 1.1em;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .for-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .for-card ul li {
+            background-color: var(--white);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: var(--dark-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .for-card ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .for-card ul li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* --- Core Features Section --- */
+        .features-section {
+            background-color: var(--light-bg);
+            padding: 60px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h4 {
+            font-size: 1.4em;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            color: var(--light-text);
+        }
+
+        /* --- Inclusive, Scalable & Future-Ready Section --- */
+        .inclusive-section {
+            padding: 60px 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .inclusive-section h2 {
+            font-size: 2em;
+            color: var(--dark-text);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .inclusive-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .inclusive-section ul li {
+            background-color: var(--light-bg);
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            font-size: 1.1em;
+            color: var(--dark-text);
+            box-shadow: var(--shadow);
+        }
+
+        /* --- Security, Trust & Compliance Section --- */
+        .security-section {
+            background-color: var(--light-bg);
+            padding: 60px 0;
+        }
+
+        .security-section ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .security-section ul li {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+            color: var(--dark-text);
+        }
+
+        .security-section ul li::before {
+            content: '✅';
+            font-size: 1.5em;
+            color: green;
+        }
+
+        /* --- Why Freeza is Unique Section --- */
+        .unique-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .unique-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .unique-card {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .unique-card h4 {
+            font-size: 1.5em;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .unique-card p {
+            font-size: 1.1em;
+            color: var(--light-text);
+        }
+
+        /* --- Blog Section --- */
+        .blog-section {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .section-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Subtle glowing effect */
-            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.05) 0%, rgba(13, 17, 23, 0) 70%);
-            z-index: 0;
-            opacity: 0.8;
-        }
-        .content-card {
-            background-color: rgba(26, 32, 44, 0.85); /* Slightly more transparent */
-            border: 1px solid #2d3748; /* Subtle border */
-            border-radius: 1.5rem; /* More rounded */
-            padding: 2.5rem;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.2); /* Enhanced shadow with glow */
-            max-width: 90%;
-            width: 100%;
-            z-index: 1;
-            position: relative;
-            backdrop-filter: blur(8px); /* Add blur for futuristic glass effect */
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .nav-link {
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-            margin-bottom: 0.5rem;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        .icon-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #2d3748;
-            border-radius: 9999px;
-            padding: 0.75rem;
-            margin-right: 0.75rem;
-            min-width: 3rem;
-            min-height: 3rem;
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.3); /* Subtle icon glow */
-        }
-        .icon-wrapper svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: #a855f7;
-        }
-        .chart-bar {
-            background-color: #6366f1;
-            height: 1.5rem;
-            border-radius: 0.5rem;
-            transition: width 0.5s ease-in-out;
-        }
-        .chart-label {
-            color: #cbd5e0;
-        }
-        .pie-slice {
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: center;
-            background: conic-gradient(
-                #6366f1 0% 40%,
-                #a855f7 40% 70%,
-                #8b5cf6 70% 90%,
-                #c084fc 90% 100%
-            );
-        }
-        .team-member-card {
-            background-color: #2d3748;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .team-member-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1rem;
-            border: 2px solid #a855f7;
-        }
-        .roadmap-item {
-            background-color: #2d3748;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .roadmap-item::before {
-            content: '';
-            position: absolute;
-            left: -1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1rem;
-            height: 1rem;
-            background-color: #a855f7;
-            border-radius: 50%;
-            border: 3px solid #6366f1;
-            z-index: 2;
-        }
-        .roadmap-line {
-            position: absolute;
-            left: -0.5rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #4a5568;
-            z-index: 1;
-        }
-        .roadmap-container {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .roadmap-container::before {
-            content: '';
-            position: absolute;
-            left: 1rem; /* Adjust to align with dots */
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #4a5568;
+            justify-content: space-between;
         }
 
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            body {
-                padding-top: 0; /* No padding-top on body for desktop, sidebar handles it */
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .blog-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .blog-card p {
+            font-size: 1em;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            flex-grow: 1; /* Allows text to take up available space */
+        }
+
+        .blog-card .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            align-self: flex-start; /* Aligns button to the left */
+        }
+
+        .blog-card .read-more:hover {
+            background-color: #004494;
+        }
+
+        /* --- Call to Action Section --- */
+        .final-cta-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .final-cta-section p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.4;
+        }
+
+        .final-cta-section h3 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .final-cta-section .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .final-cta-section .btn {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--white);
+        }
+
+        .final-cta-section .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--dark-text);
+            color: var(--white);
+            font-size: 0.9em;
+        }
+
+        footer p, footer a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
             }
-            .fixed-header {
-                display: none; /* Hide fixed header on desktop, sidebar takes over */
+
+            .hero-section p {
+                font-size: 1.1em;
             }
-            .section-container {
-                padding: 4rem 2rem;
-                min-height: 100vh; /* Full viewport height on desktop */
+
+            .hero-section .btn {
+                padding: 12px 25px;
+                font-size: 1em;
             }
-            .content-card {
-                padding: 3rem;
+
+            .section-title {
+                font-size: 2em;
             }
-            .nav-sidebar {
-                width: 250px; /* Fixed width for sidebar on larger screens */
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100%;
-                background-color: #1a202c; /* Sidebar background */
-                padding: 2rem;
-                box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+
+            .for-grid, .features-grid, .security-section ul, .blog-grid {
+                grid-template-columns: 1fr;
             }
-            .main-content {
-                margin-left: 250px; /* Offset for sidebar */
-                padding-top: 0; /* No top padding for main content on desktop */
+
+            .final-cta-section p {
+                font-size: 1.2em;
+            }
+
+            .final-cta-section h3 {
+                font-size: 2em;
             }
         }
-        @media (max-width: 767px) {
-            .nav-sidebar {
-                position: fixed;
-                top: 5rem; /* Below the fixed header */
-                left: -100%; /* Hidden by default */
-                width: 70%;
-                height: calc(100% - 5rem); /* Full height minus header */
-                background-color: #1a202c;
-                z-index: 999; /* Below main fixed header */
-                transition: left 0.3s ease-in-out;
-                padding-top: 2rem; /* Internal padding */
-                overflow-y: auto;
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 2em;
             }
-            .nav-sidebar.open {
-                left: 0;
+
+            .hero-section h1 span {
+                font-size: 0.6em;
             }
-            .menu-button {
-                display: block;
+
+            .hero-section p {
+                font-size: 1em;
             }
-            /* Adjust header for mobile to fit the beta button */
-            .header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                top: 0;
-                left: 0;
-                z-index: 1001;
-                background-color: #0d1117;
-                border-bottom: 1px solid #2d3748;
-                padding: 1rem;
+
+            .hero-section .cta-buttons {
+                flex-direction: column;
             }
-            .header .flex.items-center {
-                flex-grow: 1; /* Allow logo and text to take available space */
+
+            .section-title {
+                font-size: 1.8em;
+                margin-bottom: 40px;
             }
-            .header .beta-button-mobile {
-                margin-left: auto; /* Push beta button to the right */
-                margin-right: 1rem; /* Space before menu button */
+
+            .for-card h3 {
+                font-size: 1.5em;
+            }
+
+            .for-card p, .for-card ul li {
+                font-size: 0.95em;
+            }
+
+            .feature-card h4 {
+                font-size: 1.2em;
+            }
+
+            .feature-card p {
+                font-size: 0.9em;
+            }
+
+            .inclusive-section ul li, .security-section ul li {
+                font-size: 0.95em;
+            }
+
+            .unique-card h4 {
+                font-size: 1.3em;
+            }
+
+            .unique-card p {
+                font-size: 1em;
+            }
+
+            .final-cta-section p {
+                font-size: 1em;
+            }
+
+            .final-cta-section h3 {
+                font-size: 1.8em;
+            }
+
+            .blog-card h3 {
+                font-size: 1.3em;
             }
         }
     </style>
 </head>
-<body class="text-gray-200">
+<body>
 
-    <!-- Fixed Top Header (for both mobile and desktop, hidden on desktop if sidebar is present) -->
-    <header id="mainHeader" class="fixed-header">
-        <div class="flex items-center space-x-3">
-            <img src="https://placehold.co/40x40/6366f1/ffffff?text=F" alt="Freeza Logo" class="rounded-full">
-            <h1 class="text-xl md:text-2xl font-extrabold gradient-text">Freeza™</h1>
-            <span class="hidden md:block text-sm text-gray-400 ml-4">AI-Powered Global Talent, Hiring & Learning Ecosystem</span>
-        </div>
-        <!-- Beta Button for Header (Desktop) -->
-        <a href="https://cool-principal-470.preview.series.engineering" target="_blank" class="hidden md:flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 text-sm">
-            <i data-lucide="flask-conical" class="mr-2 w-4 h-4"></i> Try Our Beta
-        </a>
-        <!-- Mobile Header with Beta Button -->
-        <div class="md:hidden flex items-center space-x-4">
-            <a href="https://cool-principal-470.preview.series.engineering" target="_blank" class="beta-button-mobile bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 text-xs flex items-center">
-                <i data-lucide="flask-conical" class="mr-1 w-3 h-3"></i> Beta
-            </a>
-            <button id="menuButton" class="text-gray-200 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            </button>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Freeza: Build. Prove. Get Hired.<span>The world’s first AI-powered career platform that works for all fields, all learners, and all industries.</span></h1>
+            <p>From engineering to arts, medicine to law, IT to non-tech — **Freeza** helps you build proof-backed portfolios, get AI-matched jobs, and launch your career.</p>
+            <p style="font-weight: 600; font-size: 1.2em; color: var(--dark-text);">**No fake resumes. No guesswork. Just verified talent.**</p>
+            <p style="font-style: italic; font-size: 1em; color: var(--light-text);">Freeza is where students, developers, freshers, professionals, colleges, coaching centers, and companies meet — powered by AI, made for all.</p>
+            <div class="cta-buttons">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🚀 Try Our Beta →</a>
+                <a href="#get-started" class="btn btn-secondary">🔵 Get Started Free →</a>
+                <a href="#for-colleges" class="btn btn-secondary">⚪ For Colleges</a>
+                <a href="#for-recruiters" class="btn btn-secondary">⚪ For Recruiters</a>
+            </div>
         </div>
     </header>
 
-    <!-- Navigation Sidebar -->
-    <nav id="navSidebar" class="nav-sidebar hidden md:block">
-        <div class="flex items-center space-x-3 mb-8 md:mb-12">
-            <img src="https://placehold.co/50x50/6366f1/ffffff?text=F" alt="Freeza Logo" class="rounded-full">
-            <h1 class="text-2xl font-extrabold gradient-text">Freeza™</h1>
-        </div>
-        <button id="closeMenuButton" class="absolute top-4 right-4 text-gray-400 md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-        <ul class="space-y-2">
-            <li><a href="#vision" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Our Vision</a></li>
-            <li><a href="#challenge" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">The Challenge</a></li>
-            <li><a href="#solution" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">The Freeza™ Solution</a></li>
-            <li><a href="#modules" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Core Modules & Benefits</a></li>
-            <li><a href="#features" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">AI-Powered Features</a></li>
-            <li><a href="#who-can-benefit" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Who Can Benefit?</a></li>
-            <li><a href="#how-it-works" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">How Freeza Works</a></li>
-            <li><a href="#future-innovations" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Our Future Innovations</a></li>
-            <li><a href="#why-freeza" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Why Freeza Stands Out</a></li>
-            <li><a href="#about-us" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">About Us</a></li>
-            <li><a href="#blog" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Our Blog</a></li>
-            <li><a href="#get-started" class="nav-link text-lg font-medium text-gray-300 hover:text-purple-400">Get Started</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="main-content">
-        <!-- Section: Our Vision -->
-        <section id="vision" class="section-container bg-gray-900">
-            <div class="content-card text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text">Our Vision</h2>
-                <p class="text-xl md:text-3xl leading-relaxed text-gray-200 max-w-3xl mx-auto">
-                    Empowering individuals worldwide to unlock their full potential by showcasing verified talent, accessing opportunities, and driving global careers.
-                </p>
-                <div class="flex justify-center items-center mt-8 space-x-6">
-                    <div class="text-center">
-                        <div class="icon-wrapper mx-auto mb-2"><i data-lucide="unlock"></i></div>
-                        <span class="text-sm md:text-base text-gray-400">Unlock Potential</span>
+    <main>
+        <section id="who-is-freeza-for" class="for-section">
+            <div class="container">
+                <h2 class="section-title">🎯 Who Is <span>Freeza</span> For?</h2>
+                <div class="for-grid">
+                    <div class="for-card">
+                        <h3>👨‍🎓 Students & Freshers</h3>
+                        <p>No matter your degree — Engineering, Arts, Commerce, Law, Medicine, Psychology, Biotech, Design, Agriculture — build a powerful AI-generated portfolio and find jobs that fit your real skills.</p>
+                        <ul>
+                            <li>Create AI-driven resumes</li>
+                            <li>Get career recommendations</li>
+                            <li>Earn verified badges</li>
+                        </ul>
                     </div>
-                    <div class="text-center">
-                        <div class="icon-wrapper mx-auto mb-2"><i data-lucide="check-circle"></i></div>
-                        <span class="text-sm md:text-base text-gray-400">Verified Talent</span>
+                    <div class="for-card">
+                        <h3>👨‍💻 Developers & Professionals</h3>
+                        <p>Whether you're from IT, non-IT, LegalTech, MedTech, FinTech, or making a career switch — Freeza lets you prove your skills, build your profile, and find work you love.</p>
+                        <ul>
+                            <li>Verified code samples & projects</li>
+                            <li>Assessments and interview tools</li>
+                            <li>Build your professional profile</li>
+                        </ul>
                     </div>
-                    <div class="text-center">
-                        <div class="icon-wrapper mx-auto mb-2"><i data-lucide="briefcase"></i></div>
-                        <span class="text-sm md:text-base text-gray-400">Access Opportunities</span>
+                    <div class="for-card">
+                        <h3>🏫 Colleges & Universities</h3>
+                        <p>Give your students an edge with AI insights, curriculum alignment, verified outcomes, and placement visibility.</p>
+                        <ul>
+                            <li>Track student progress</li>
+                            <li>Host events & hackathons</li>
+                            <li>Promote campus achievements</li>
+                        </ul>
                     </div>
-                    <div class="text-center">
-                        <div class="icon-wrapper mx-auto mb-2"><i data-lucide="globe"></i></div>
-                        <span class="text-sm md:text-base text-gray-400">Global Careers</span>
+                    <div class="for-card">
+                        <h3>🧑‍🏫 Coaching Centers & Trainers</h3>
+                        <p>Publish smart courses, certify students on the blockchain, and grow your brand with Freeza's learning tools.</p>
+                        <ul>
+                            <li>Host online events</li>
+                            <li>Issue credentials</li>
+                            <li>Monetize your expertise</li>
+                        </ul>
+                    </div>
+                    <div class="for-card" id="for-recruiters">
+                        <h3>🏢 Companies & Recruiters (IT & Non-IT)</h3>
+                        <p>Access a diverse pool of verified, AI-ranked candidates — with real work, not vague resumes.</p>
+                        <ul>
+                            <li>Post jobs & shortlist faster</li>
+                            <li>Use predictive analytics for smarter hiring</li>
+                            <li>View real work, not just resumes</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section: The Challenge -->
-        <section id="challenge" class="section-container bg-gray-800">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-red-400 text-center">The Challenge <span class="text-gray-300">— What We Solve</span></h2>
-                <ul class="space-y-4 text-lg md:text-xl text-gray-200">
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-red-600/20 mr-4"><i data-lucide="alert-triangle" class="text-red-400"></i></div>
-                        <span>Lack of a unified, trusted platform for verified digital portfolios.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-red-600/20 mr-4"><i data-lucide="x-circle" class="text-red-400"></i></div>
-                        <span>Recruiters face difficulties with unverified resumes and irrelevant applications.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-red-600/20 mr-4"><i data-lucide="school" class="text-red-400"></i></div>
-                        <span>Colleges struggle to effectively showcase student achievements and placements.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-red-600/20 mr-4"><i data-lucide="book-open" class="text-red-400"></i></div>
-                        <span>Coaching providers find it hard to reach their targeted audience.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-red-600/20 mr-4"><i data-lucide="link-off" class="text-red-400"></i></div>
-                        <span>Fragmented systems for hiring, learning, and career discovery.</span>
-                    </li>
+        <hr>
+
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">🧠 Core <span>Features</span></h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>AI Portfolio Builder</h4>
+                        <p>Create beautiful, verified profiles with AI-generated bios, visuals, and proof-based storytelling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Smart Job Matching</h4>
+                        <p>AI finds best-fit jobs based on your skills, interests, and past work.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>AI Resume & Cover Letters</h4>
+                        <p>Generate stunning resumes and personalized job applications instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Career Path Navigator</h4>
+                        <p>AI recommends future roles, skills to learn, and salary expectations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Real-time Skill Assessments</h4>
+                        <p>AI interviews, code challenges, simulations, and feedback.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Blockchain Credentials</h4>
+                        <p>Get tamper-proof certificates issued as NFTs (optional).</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>AI Talent Score</h4>
+                        <p>Understand and showcase your credibility based on AI analysis.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Verified Talent Badges</h4>
+                        <p>Earn badges for completed projects, courses, and assessments.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Proof-of-Work Vault</h4>
+                        <p>Host all your verified evidence: projects, videos, resumes, badges.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Gamified Learning & Skill Quests</h4>
+                        <p>Level up your profile through dynamic learning journeys.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>AI Industry Trend Prediction</h4>
+                        <p>Know what’s coming: AI predicts skill demand & job growth.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>AI Role-Playing Simulations</h4>
+                        <p>Practice scenarios like tech support, legal pitch, patient consulting.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Curriculum Feedback for Colleges</h4>
+                        <p>AI suggests updates to match market skill trends.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Course Marketplace for Trainers</h4>
+                        <p>Upload courses, track enrollments, and issue certifications.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Virtual Talent Events & Hackathons</h4>
+                        <p>Host or attend live hiring events, challenges, webinars.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Predictive Hiring Tools for Recruiters</h4>
+                        <p>Rank applicants, view match scores, and get AI-backed recommendations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Ads & Premium Visibility</h4>
+                        <p>Boost your job posts, courses, or events across Freeza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="inclusive-section">
+            <div class="container">
+                <h2 class="section-title">🌍 Inclusive, Scalable & <span>Future-Ready</span></h2>
+                <h2>Freeza Supports:</h2>
+                <ul>
+                    <li>🌐 **All degrees & fields:** Engineering, Law, Medicine, Commerce, Fine Arts, Journalism, Sports Science, Architecture, AgriTech, Petrochemicals, Biotech, Psychology, Philosophy, Music, Film, Political Science, Environmental Science, Non-tech vocations, and more.</li>
+                    <li>🌏 **All locations:** Urban, rural, tier-2, tier-3 cities — designed to work even on low bandwidth.</li>
+                    <li>🔤 (Coming Soon) **Multilingual interface** for local languages.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Section: The Freeza™ Solution -->
-        <section id="solution" class="section-container bg-gray-900">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text text-center">The Freeza™ Solution</h2>
-                <p class="text-xl md:text-2xl leading-relaxed text-gray-200 mb-6 text-center">
-                    One Unified AI-Powered Platform for Talent Discovery, Hiring, and Learning
-                </p>
-                <ul class="space-y-4 text-lg md:text-xl text-gray-200">
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-green-600/20 mr-4"><i data-lucide="sparkles" class="text-green-400"></i></div>
-                        <span>AI-Verified Digital Talent Portfolios & Skill Maps for individuals.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-green-600/20 mr-4"><i data-lucide="layout-dashboard" class="text-green-400"></i></div>
-                        <span>Dedicated Dashboards for Colleges to manage placements & student showcases.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-green-600/20 mr-4"><i data-lucide="brain" class="text-green-400"></i></div>
-                        <span>AI-Powered Tools for Recruiters to enable precision hiring.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-green-600/20 mr-4"><i data-lucide="award" class="text-green-400"></i></div>
-                        <span>Coaching Providers can deliver Verified Courses linked to talent portfolios.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-green-600/20 mr-4"><i data-lucide="infinity" class="text-green-400"></i></div>
-                        <span>Accessible Globally with No Age or Stream Restrictions.</span>
-                    </li>
+        <hr>
+
+        <section class="security-section">
+            <div class="container">
+                <h2 class="section-title">🔒 Security, Trust & <span>Compliance</span></h2>
+                <ul>
+                    <li>✅ **Supabase Authentication** + Row Level Security (RLS)</li>
+                    <li>✅ **Blockchain-integrated certification** (Polygon/Solana)</li>
+                    <li>✅ **Role-based access** for student, college, coaching, recruiter</li>
+                    <li>✅ **GDPR-compliant** privacy and data policies</li>
+                    <li>✅ **Explainable AI:** See why you got a match or score</li>
+                    <li>✅ **Bias auditing:** Ensure fair assessments for all backgrounds</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Section: Core Modules & Benefits -->
-        <section id="modules" class="section-container bg-gray-800">
-            <div class="content-card text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-10 gradient-text">Core Modules & <span class="text-gray-300">User Benefits</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-700/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="icon-wrapper mx-auto mb-4"><i data-lucide="graduation-cap"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">For Students & Professionals</h3>
-                        <p class="text-lg text-gray-100">Showcase verified talent, build dynamic portfolios, and get AI-powered career path recommendations to unlock your full potential.</p>
+        <hr>
+
+        <section class="unique-section">
+            <div class="container">
+                <h2 class="section-title">💡 Why <span>Freeza</span> is Unique</h2>
+                <div class="unique-grid">
+                    <div class="unique-card">
+                        <h4>Works across all educational fields</h4>
+                        <p>Not just tech — but arts, law, medicine, agriculture & more.</p>
                     </div>
-                    <div class="bg-gray-700/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="icon-wrapper mx-auto mb-4"><i data-lucide="building-2"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">For Colleges & Universities</h3>
-                        <p class="text-lg text-gray-100">Gain a centralized talent dashboard, streamline placements, access institutional analytics, and host sponsored events to boost student success.</p>
+                    <div class="unique-card">
+                        <h4>AI from the ground up</h4>
+                        <p>Personalized guidance, hiring prediction, career mapping.</p>
                     </div>
-                    <div class="bg-gray-700/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="icon-wrapper mx-auto mb-4"><i data-lucide="briefcase-business"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">For Recruiters & Companies</h3>
-                        <p class="text-lg text-gray-100">Utilize AI-driven hiring and candidate matching tools, post targeted job listings, and enjoy instant communication for efficient recruitment.</p>
+                    <div class="unique-card">
+                        <h4>Proof-based hiring</h4>
+                        <p>Portfolios + Projects > Resume-only systems.</p>
                     </div>
-                    <div class="bg-gray-700/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="icon-wrapper mx-auto mb-4"><i data-lucide="book-check"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">For Coaching & Course Providers</h3>
-                        <p class="text-lg text-gray-100">Offer verified courses and certifications, promote events, and leverage talent mapping tools to connect with the right learners.</p>
+                    <div class="unique-card">
+                        <h4>Blockchain-backed trust</h4>
+                        <p>Credentials that can't be faked or lost.</p>
+                    </div>
+                    <div class="unique-card">
+                        <h4>Truly inclusive</h4>
+                        <p>From tier-1 colleges to rural students — Freeza levels the field.</p>
+                    </div>
+                    <div class="unique-card">
+                        <h4>For learners + companies</h4>
+                        <p>One ecosystem to learn, grow, and hire from.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section: AI-Powered Features -->
-        <section id="features" class="section-container bg-gray-900">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text text-center">AI-Powered Features</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg md:text-xl">
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="map"></i></div>
-                        <span>**AI Talent Mapping & Progress Forecasting:** Understand your skill trajectory.</span>
+        <hr>
+
+        <section class="blog-section">
+            <div class="container">
+                <h2 class="section-title">📚 Our <span>Insights</span>: Freeza in the Spotlight</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <h3>Beyond the Resume: Why Freeza's Proof-Backed Portfolios Outshine Traditional CVs</h3>
+                        <p>In today's competitive job market, a flat resume often fails to capture the true depth of a candidate's skills. Discover how Freeza's AI-powered portfolios, brimming with verified projects and real-world proof, are revolutionizing hiring by showing what you can *do*, not just what you claim.</p>
+                        <a href="#blog1-link" class="read-more">Read More →</a>
                     </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="scan-text"></i></div>
-                        <span>**AI Project Analyzer & Originality Verifier:** Ensure authenticity and quality of your work.</span>
+                    <div class="blog-card">
+                        <h3>AI in Recruitment: Freeza's Intelligent Approach vs. Generic Job Boards (LinkedIn, Indeed & More)</h3>
+                        <p>Are you tired of endless applications and irrelevant job postings? Learn how Freeza's sophisticated AI matching goes beyond keywords, connecting you with opportunities that truly align with your validated skills and career aspirations, unlike broad platforms that often lead to guesswork and spam.</p>
+                        <a href="#blog2-link" class="read-more">Read More →</a>
                     </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="file-text"></i></div>
-                        <span>**AI Resume & Video Portfolio Generator:** Create compelling applications effortlessly.</span>
+                    <div class="blog-card">
+                        <h3>The Trust Revolution: How Blockchain Credentials on Freeza End Fake Degrees Forever</h3>
+                        <p>In an era of credential fraud, trust is paramount. Explore how Freeza leverages blockchain technology to issue tamper-proof certificates and verified badges, ensuring that every qualification on our platform is authentic and reliable, bringing unprecedented trust to hiring.</p>
+                        <a href="#blog3-link" class="read-more">Read More →</a>
                     </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="route"></i></div>
-                        <span>**AI Career Roadmap Recommendations:** Discover personalized paths to success.</span>
-                    </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="user-check"></i></div>
-                        <span>**Recruiter-Candidate Fit Score (AI-Powered):** Find your perfect match faster.</span>
-                    </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="send"></i></div>
-                        <span>**Automated Personalized Job & Event Suggestions:** Never miss an opportunity.</span>
-                    </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="bar-chart-2"></i></div>
-                        <span>**AI-Driven Institutional Analytics & Skill Gap Reports:** For colleges to optimize programs.</span>
-                    </div>
-                    <div class="flex items-start p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                        <div class="icon-wrapper mr-4"><i data-lucide="certificate"></i></div>
-                        <span>**Auto-Certification Verifications:** Instant trust and credibility.</span>
+                    <div class="blog-card">
+                        <h3>Breaking Down Barriers: How Freeza's Inclusive Design Opens Doors for All Talent</h3>
+                        <p>From rural villages to tier-1 cities, and across all fields from arts to agriculture, Freeza is built to be accessible and beneficial for everyone. Discover our commitment to inclusivity and how our platform levels the playing field for diverse talent pools.</p>
+                        <a href="#blog4-link" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section: Who Can Benefit? -->
-        <section id="who-can-benefit" class="section-container bg-gray-800">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text text-center">Who Can Benefit?</h2>
-                <p class="text-xl md:text-2xl leading-relaxed text-gray-200 mb-6 text-center">
-                    Freeza™ is designed for a diverse global audience looking to connect, learn, and grow.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-lg md:text-xl">
-                    <div class="flex items-center p-4 bg-gray-700/50 rounded-lg">
-                        <div class="icon-wrapper mr-3 text-sm"><i data-lucide="user-2"></i></div>
-                        <span>**Students:** Build verified portfolios and find ideal career paths.</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-700/50 rounded-lg">
-                        <div class="icon-wrapper mr-3 text-sm"><i data-lucide="users"></i></div>
-                        <span>**Professionals:** Showcase skills, discover new opportunities, and advance careers.</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-700/50 rounded-lg">
-                        <div class="icon-wrapper mr-3 text-sm"><i data-lucide="building"></i></div>
-                        <span>**Colleges & Universities:** Enhance student placements and institutional visibility.</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-700/50 rounded-lg">
-                        <div class="icon-wrapper mr-3 text-sm"><i data-lucide="briefcase"></i></div>
-                        <span>**Recruiters & Companies:** Access a pool of AI-verified talent for precision hiring.</span>
-                    </div>
-                    <div class="flex items-center p-4 bg-gray-700/50 rounded-lg">
-                        <div class="icon-wrapper mr-3 text-sm"><i data-lucide="book-text"></i></div>
-                        <span>**Coaching & Course Providers:** Reach targeted learners and offer verified programs.</span>
-                    </div>
+        <hr>
+
+        <section class="final-cta-section">
+            <div class="container">
+                <p>Whether you're a student discovering your future, a self-taught coder ready to get noticed, a trainer shaping tomorrow's talent, or a recruiter tired of filtering through fake resumes —</p>
+                <h3>Freeza is built for you.</h3>
+                <h3>🎯 Prove your skills. 🌱 Grow your future. 🏆 Get hired with confidence.</h3>
+                <div class="cta-buttons">
+                    <a href="#join-freeza" class="btn btn-secondary">🔵 Join Freeza Today →</a>
+                    <a href="#hire-with-freeza" class="btn btn-secondary">💼 Hire With Freeza →</a>
+                    <a href="#partner-as-college-trainer" class="btn btn-secondary">🏫 Partner as a College/Trainer →</a>
                 </div>
             </div>
         </section>
-
-        <!-- Section: How Freeza Works -->
-        <section id="how-it-works" class="section-container bg-gray-900">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text text-center">How Freeza Works</h2>
-                <p class="text-xl md:text-2xl text-gray-200 mb-6 text-center">
-                    Freeza operates on a flexible model designed to provide value to all users.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg md:text-xl">
-                    <div class="flex flex-col items-center p-6 bg-gray-700/50 rounded-lg shadow-md">
-                        <div class="icon-wrapper mb-4"><i data-lucide="user-plus"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">Freemium Access</h3>
-                        <p class="text-gray-100 text-center">Start your Freeza journey with essential features available for free. Explore our platform and see the benefits firsthand.</p>
-                    </div>
-                    <div class="flex flex-col items-center p-6 bg-gray-700/50 rounded-lg shadow-md">
-                        <div class="icon-wrapper mb-4"><i data-lucide="credit-card"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">Premium Subscriptions</h3>
-                        <p class="text-gray-100 text-center">Unlock advanced AI tools, unlimited projects, enhanced analytics, and exclusive features with our affordable premium plans tailored for each user type.</p>
-                    </div>
-                    <div class="flex flex-col items-center p-6 bg-gray-700/50 rounded-lg shadow-md">
-                        <div class="icon-wrapper mb-4"><i data-lucide="dollar-sign"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">Value-Added Services</h3>
-                        <p class="text-gray-100 text-center">Benefit from sponsored listings, featured opportunities, and specialized event access, enhancing visibility and connection across the ecosystem.</p>
-                    </div>
-                    <div class="flex flex-col items-center p-6 bg-gray-700/50 rounded-lg shadow-md">
-                        <div class="icon-wrapper mb-4"><i data-lucide="calendar-check"></i></div>
-                        <h3 class="text-2xl font-bold mb-2 text-purple-200">Certification & Events</h3>
-                        <p class="text-gray-100 text-center">Participate in verified courses and exclusive events, gaining certifications and networking opportunities that propel your career forward.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Our Future Innovations -->
-        <section id="future-innovations" class="section-container bg-gray-800">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text text-center">Our Future Innovations</h2>
-                <p class="text-xl md:text-2xl leading-relaxed text-gray-200 mb-6 text-center">
-                    We are continuously evolving Freeza to bring you cutting-edge features and expand our global impact.
-                </p>
-                <div class="roadmap-container relative">
-                    <div class="roadmap-line"></div>
-                    <div class="roadmap-item">
-                        <h3 class="text-xl font-semibold text-purple-300 mb-2">Enhanced AI Capabilities</h3>
-                        <p class="text-gray-300">Deeper learning features for even more precise talent mapping and career forecasting.</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 class="text-xl font-semibold text-purple-300 mb-2">Blockchain Certifications</h3>
-                        <p class="text-gray-300">Secure and verifiable diplomas and skill credentials for ultimate trust.</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 class="text-xl font-semibold text-purple-300 mb-2">Global Expansion & Localization</h3>
-                        <p class="text-gray-300">Expanding our reach and tailoring the platform for diverse international markets.</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 class="text-xl font-semibold text-purple-300 mb-2">AI-Based Mentorship & Community</h3>
-                        <p class="text-gray-300">Connecting users with mentors and fostering vibrant learning communities.</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 class="text-xl font-semibold text-purple-300 mb-2">Virtual Talent Fairs & Hackathons</h3>
-                        <p class="text-gray-300">Dynamic virtual events to connect talent with opportunities globally.</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <h3 class="text-xl font-semibold text-purple-300 mb-2">Enterprise Solutions</h3>
-                        <p class="text-gray-300">Tailored hiring solutions for large enterprises and government organizations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Why Freeza Stands Out -->
-        <section id="why-freeza" class="section-container bg-gray-900">
-            <div class="content-card">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text text-center">Why Freeza Stands Out</h2>
-                <p class="text-xl md:text-2xl leading-relaxed text-gray-200 mb-6 text-center">
-                    Freeza offers unparalleled advantages for individuals, institutions, and businesses.
-                </p>
-                <ul class="space-y-4 text-lg md:text-xl text-gray-200">
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-blue-600/20 mr-4"><i data-lucide="sparkles" class="text-blue-400"></i></div>
-                        <span>**AI-Driven Verification:** Our unique AI ensures talent and project authenticity, building trust.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-blue-600/20 mr-4"><i data-lucide="link" class="text-blue-400"></i></div>
-                        <span>**Integrated Ecosystem:** Seamlessly connects hiring, learning, and talent showcasing in one platform.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-blue-600/20 mr-4"><i data-lucide="layout-dashboard" class="text-blue-400"></i></div>
-                        <span>**Dedicated Dashboards:** Tailored experiences for students, colleges, recruiters, and coaches.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-blue-600/20 mr-4"><i data-lucide="compass" class="text-blue-400"></i></div>
-                        <span>**Personalized Pathways:** AI-powered recommendations for career roadmaps and job suggestions.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="icon-wrapper bg-blue-600/20 mr-4"><i data-lucide="globe" class="text-blue-400"></i></div>
-                        <span>**Global Accessibility:** Designed for worldwide use with no age or stream limitations.</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section: About Us -->
-        <section id="about-us" class="section-container bg-gray-800">
-            <div class="content-card text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text">About Us</h2>
-                <div class="mb-10">
-                    <h3 class="text-2xl font-semibold mb-4 text-purple-300">👤 Our Founder:</h3>
-                    <div class="team-member-card inline-block p-6">
-                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=FM" alt="Freezan Mo" class="mx-auto mb-3">
-                        <p class="text-xl font-semibold text-gray-100">Freezan Mo</p>
-                        <p class="text-gray-400">Visionary Founder with deep expertise in EdTech and HRTech, driving Freeza's mission to revolutionize talent discovery.</p>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold mb-4 text-purple-300">Our Commitment:</h3>
-                    <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
-                        At Freeza™, we are dedicated to creating a transparent, efficient, and empowering ecosystem where every talent can be discovered and every opportunity can be seized, globally.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Blog Section -->
-        <section id="blog" class="section-container bg-gray-900">
-            <div class="content-card text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 gradient-text">Our Blog</h2>
-                <div class="text-left max-w-3xl mx-auto">
-                    <!-- Blog Post 1 -->
-                    <div class="mb-12 pb-12 border-b border-gray-700 last:border-b-0">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-purple-200">Why Resumes Are Dead: The Rise of AI-Verified Portfolios</h3>
-                        <p class="text-gray-300 mb-6">
-                            Let’s face it—traditional resumes no longer cut it in today’s fast-moving world. In a market driven by real skills, practical knowledge, and digital proof, job seekers need more than just words on paper.
-                            That’s where AI-Verified Digital Portfolios step in—and platforms like Freeza™ are leading this revolution.
-                        </p>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 text-red-400">Why Resumes Are Fading Out:</h4>
-                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-200 mb-6">
-                            <li>Too generic & outdated.</li>
-                            <li>Hard to verify claims.</li>
-                            <li>Lack of creativity & real-world proof.</li>
-                        </ul>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 text-green-400">The Solution: AI-Powered Portfolios</h4>
-                        <p class="text-lg text-gray-200 mb-4">
-                            With Freeza™, anyone—from students to professionals—can:
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-200 mb-6">
-                            <li>Showcase verified projects, certifications & research.</li>
-                            <li>Get AI-generated Skill Maps that recruiters trust.</li>
-                            <li>Present Video Portfolios for a personal touch.</li>
-                            <li>Auto-generate Resumes from real work, not empty claims.</li>
-                        </ul>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 text-purple-300">Benefits for Students & Professionals:</h4>
-                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-200 mb-6">
-                            <li>Stand out from the crowd.</li>
-                            <li>Increase chances of being hired.</li>
-                            <li>Get noticed by top companies faster.</li>
-                        </ul>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 gradient-text">The Future of Hiring is Here:</h4>
-                        <p class="text-lg text-gray-200 mb-8">
-                            AI-Verified Portfolios aren’t just the future—they’re already transforming careers globally. Don’t get left behind.
-                        </p>
-                        <p class="text-xl font-bold text-purple-400">
-                            ✨ Start building your Freeza™ portfolio today and unlock opportunities you never thought possible.
-                        </p>
-                    </div>
-
-                    <!-- Blog Post 2 -->
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-purple-200">How Colleges Can Boost Placements with AI Talent Mapping</h3>
-                        <p class="text-gray-300 mb-6">
-                            In an era of fierce competition, colleges need smarter ways to boost placement success. Manual placements aren’t enough anymore. The secret? AI-powered Talent Mapping.
-                        </p>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 text-green-400">What is Talent Mapping?</h4>
-                        <p class="text-lg text-gray-200 mb-4">
-                            It’s the process of analyzing students’ skills, projects, and academic backgrounds to:
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-200 mb-6">
-                            <li>Identify strengths & hidden talents.</li>
-                            <li>Match students to jobs more precisely.</li>
-                            <li>Provide actionable data to recruiters.</li>
-                        </ul>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 text-purple-300">Why Freeza™ Makes It Easy:</h4>
-                        <p class="text-lg text-gray-200 mb-4">
-                            Freeza’s AI-powered dashboards allow colleges to:
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-200 mb-6">
-                            <li>Showcase student portfolios & verified projects.</li>
-                            <li>Get auto-generated placement analytics.</li>
-                            <li>Host events, symposiums, and connect with recruiters.</li>
-                            <li>Offer advanced career guidance using AI recommendations.</li>
-                        </ul>
-
-                        <h4 class="text-xl md:text-2xl font-semibold mb-3 gradient-text">Results Colleges Can Expect:</h4>
-                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-200 mb-6">
-                            <li>Higher student placement rates.</li>
-                            <li>Stronger recruiter partnerships.</li>
-                            <li>Improved college reputation & rankings.</li>
-                        </ul>
-
-                        <p class="text-xl font-bold text-purple-400">
-                            🎓 Ready to revolutionize your placement strategy?
-                        </p>
-                        <p class="text-xl font-bold text-purple-400 mt-2">
-                            Join Freeza™ and start showcasing your students to the world!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Section: Get Started -->
-        <section id="get-started" class="section-container bg-gradient-to-br from-blue-900 to-gray-900 text-center">
-            <div class="content-card bg-gray-800 bg-opacity-70 backdrop-blur-sm p-8 md:p-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-tight">Ready to Experience Freeza™?</h2>
-                <p class="text-xl md:text-2xl leading-relaxed text-gray-200 mb-8 max-w-3xl mx-auto">
-                    Join our growing community and unlock a world of verified talent, learning, and career opportunities.
-                </p>
-
-                <div class="flex flex-col items-center justify-center space-y-6 md:space-y-0 md:space-x-8 md:flex-row">
-                    <form id="waitlistForm" class="w-full max-w-md space-y-4 text-left">
-                        <div>
-                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name:</label>
-                            <input type="text" id="name" name="name" required
-                                class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-700 text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                placeholder="Your Name">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email:</label>
-                            <input type="email" id="email" name="email" required
-                                class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-700 text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                placeholder="your.email@example.com">
-                        </div>
-                        <div>
-                            <label for="role" class="block text-gray-300 text-sm font-bold mb-2">I am a:</label>
-                            <select id="role" name="role" required
-                                class="shadow appearance-none border border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-700 text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="">Select your role</option>
-                                <option value="student_professional">Student / Professional</option>
-                                <option value="college_university">College / University</option>
-                                <option value="recruiter_company">Recruiter / Company</option>
-                                <option value="coaching_provider">Coaching / Course Provider</option>
-                            </select>
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-                            Join the Waitlist
-                        </button>
-                    </form>
-
-                    <div id="waitlistMessage" class="hidden text-center text-lg text-green-400 font-semibold mt-4">
-                        Thank you for joining the waitlist! We'll notify you soon.
-                    </div>
-                </div>
-
-                <div class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-lg md:text-xl">
-                    <a href="https://cool-principal-470.preview.series.engineering" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center">
-                        <i data-lucide="flask-conical" class="mr-2"></i> Try Our Beta
-                    </a>
-                    <p class="flex items-center"><i data-lucide="mail" class="mr-2 text-purple-400"></i><a href="mailto:freezan@freeza.pro" class="text-gray-200 hover:text-purple-400">freezan@freeza.pro</a></p>
-                    <p class="flex items-center"><i data-lucide="phone" class="mr-2 text-purple-400"></i><a href="tel:+918072401586" class="text-gray-200 hover:text-purple-400">+91 8072401586</a></p>
-                    <p class="flex items-center"><i data-lucide="globe" class="mr-2 text-purple-400"></i><a href="https://www.freeza.pro" target="_blank" class="text-gray-200 hover:text-purple-400">www.freeza.pro</a></p>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <script type="module">
-        // Import Firebase modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Freeza. All rights reserved. Powered by AI, Made for All.</p>
+            <p>Contact: <a href="mailto:freezan@freeza.pro">freezan@freeza.pro</a> | LinkedIn: <a href="https://www.linkedin.com/company/freeza" target="_blank" rel="noopener noreferrer">Freeza on LinkedIn</a></p>
+        </div>
+    </footer>
 
-        // Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyADCYuQNmPXQQ6hpH2zZB6ppxmzUN1j_0E",
-            authDomain: "freeza-website-waitlist.firebaseapp.com",
-            projectId: "freeza-website-waitlist",
-            storageBucket: "freeza-website-waitlist.firebasestorage.app",
-            messagingSenderId: "330421601177",
-            appId: "1:330421601177:web:c9dbaca20d18595bd90908",
-            measurementId: "G-DKHYBSHR5T"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = document.getElementById('mainHeader').offsetHeight;
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-                if (window.innerWidth < 768) {
-                    document.getElementById('navSidebar').classList.remove('open');
-                }
-            });
-        });
-
-        // Mobile menu toggle
-        const menuButton = document.getElementById('menuButton');
-        const closeMenuButton = document.getElementById('closeMenuButton');
-        const navSidebar = document.getElementById('navSidebar');
-
-        if (menuButton) {
-            menuButton.addEventListener('click', () => {
-                navSidebar.classList.add('open');
-            });
-        }
-        if (closeMenuButton) {
-            closeMenuButton.addEventListener('click', () => {
-                navSidebar.classList.remove('open');
-            });
-        }
-
-        // Highlight active navigation link on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${entry.target.id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, {
-            rootMargin: '-100px 0px -50% 0px'
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        window.addEventListener('load', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            const firstContentNavLink = document.querySelector('.nav-link[href="#vision"]');
-            if (firstContentNavLink) {
-                firstContentNavLink.classList.add('active');
-            }
-        });
-
-        // Handle Waitlist Form Submission with Firestore
-        const waitlistForm = document.getElementById('waitlistForm');
-        const waitlistMessage = document.getElementById('waitlistMessage');
-
-        if (waitlistForm) {
-            waitlistForm.addEventListener('submit', async function(event) {
-                event.preventDefault();
-
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const role = document.getElementById('role').value;
-
-                try {
-                    // Sign in anonymously to get a user ID for the submission
-                    // This is important for Firestore security rules and tracking
-                    const userCredential = await signInAnonymously(auth);
-                    const userId = userCredential.user.uid;
-
-                    // Add a new document to the 'waitlist_submissions' collection
-                    await addDoc(collection(db, "waitlist_submissions"), {
-                        name: name,
-                        email: email,
-                        role: role,
-                        timestamp: serverTimestamp(), // Adds a server-generated timestamp
-                        userId: userId // Store the anonymous user ID
-                    });
-
-                    console.log("Document successfully written to Firestore!");
-                    waitlistForm.classList.add('hidden');
-                    waitlistMessage.classList.remove('hidden');
-
-                    // Optional: Clear form fields after successful submission
-                    waitlistForm.reset();
-
-                } catch (error) {
-                    console.error("Error writing document to Firestore: ", error);
-                    // Display an error message to the user
-                    waitlistMessage.textContent = "Error submitting. Please try again later. Check console for details.";
-                    waitlistMessage.classList.remove('hidden');
-                    waitlistMessage.classList.add('text-red-400'); // Change color for error
-                }
-            });
-        }
-    </script>
 </body>
 </html>
