@@ -11,25 +11,51 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light blue-gray background */
+            background-color: #ffffff; /* Changed to white background */
             color: #334155; /* Darker text for contrast */
         }
-        .gradient-bg {
-            background: linear-gradient(to right, #6366f1, #8b5cf6); /* Purple to Indigo gradient */
-        }
-        .btn-primary {
-            @apply inline-block px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105;
-            background: linear-gradient(to right, #6366f1, #8b5cf6);
-        }
-        /* Radium Green Gradient Button Style */
-        .btn-radium-green {
-            @apply inline-block px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105;
+        /* The main gradient is now primarily for text, not backgrounds */
+        .text-radium-gradient {
             background: linear-gradient(to right, #0f766e, #34d399); /* Dark to light green gradient */
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #6366f1, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text; /* Standard property */
+            color: transparent; /* Fallback for non-webkit browsers */
+        }
+        /* This class is now used for the main Freeza logo text */
+        .text-gradient {
+            background: linear-gradient(to right, #0f766e, #34d399); /* Dark to light green gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Button styles: white background with green border and green gradient text */
+        .btn-green-outline {
+            @apply inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105;
+            background-color: white;
+            border: 2px solid #0f766e; /* Dark green border */
+        }
+        .btn-green-outline:hover {
+            border-color: #065f46; /* Even darker green on hover */
+            box-shadow: 0 10px 15px -3px rgba(15, 118, 110, 0.2), 0 4px 6px -2px rgba(15, 118, 110, 0.1); /* Subtle green shadow */
+        }
+
+        /* Specific text colors that were indigo are now radium green */
+        .text-green-dark {
+            color: #0f766e; /* Darker green for emphasis */
+        }
+        .text-green-darker-hover:hover {
+            color: #065f46; /* Even darker green for hover */
+        }
+        .border-green-dark {
+            border-color: #0f766e;
+        }
+        .hover\:border-green-darker:hover {
+            border-color: #065f46;
+        }
+        /* Light green background for feature boxes */
+        .bg-light-green {
+            background-color: #ecfdf5;
         }
     </style>
 </head>
@@ -39,100 +65,100 @@
     <header class="bg-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold text-gradient rounded-md p-2">Freeza</a>
-            <nav>
-                <a href="#mvp" class="btn-radium-green mr-4">Try Our MVP Now</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="btn-radium-green mr-4">Join the Waitlist</a>
-                <a href="https://freeza.created.app/" target="_blank" class="btn-radium-green">Get the Feel of Freeza</a>
+            <nav class="flex space-x-4">
+                <a href="#mvp" class="btn-green-outline"><span class="text-radium-gradient">Try Our MVP Now</span></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="btn-green-outline"><span class="text-radium-gradient">Join the Waitlist</span></a>
+                <a href="https://freeza.created.app/" target="_blank" class="btn-green-outline"><span class="text-radium-gradient">Get the Feel of Freeza</span></a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20 md:py-32 text-center rounded-b-3xl shadow-xl">
+    <section class="bg-white py-20 md:py-32 text-center rounded-b-3xl shadow-xl">
         <div class="container mx-auto px-4">
             <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                Freeza: Where Skills Meet Opportunity – Across Every Domain
+                <span class="text-radium-gradient">Freeza: Where Skills Meet Opportunity – Across Every Domain</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-700">
                 The Ultimate AI-Powered Talent, Learning & Hiring Platform. <br> Empowering every stakeholder in the 21st-century talent economy.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="btn-radium-green animate-bounce">
-                    🚀 Try Our MVP Now
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="btn-green-outline animate-bounce">
+                    <span class="text-radium-gradient">🚀 Try Our MVP Now</span>
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="btn-radium-green">
-                    📝 Join the Waitlist
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="btn-green-outline">
+                    <span class="text-radium-gradient">📝 Join the Waitlist</span>
                 </a>
             </div>
             <div class="mt-8">
-                <a href="https://freeza.created.app/" target="_blank" class="btn-radium-green">
-                    ✨ Get the Feel of What is Inside Freeza
+                <a href="https://freeza.created.app/" target="_blank" class="btn-green-outline">
+                    <span class="text-radium-gradient">✨ Get the Feel of What is Inside Freeza</span>
                 </a>
             </div>
-            <div class="mt-12 text-lg">
+            <div class="mt-12 text-lg text-gray-700">
                 <p>📩 Request Early Access or 💼 Partner With Us:</p>
                 <p class="mt-2">
-                    <a href="mailto:freezan@freeza.pro" class="text-white hover:underline">📧 Email: freezan@freeza.pro</a> |
-                    <a href="tel:+918072401586" class="text-white hover:underline">📞 Phone: +91 8072401586</a>
+                    <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline text-green-darker-hover">📧 Email: freezan@freeza.pro</a> |
+                    <a href="tel:+918072401586" class="text-green-dark hover:underline text-green-darker-hover">📞 Phone: +91 8072401586</a>
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Mission Section -->
-    <section class="py-16 md:py-24 bg-white">
+    <section class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8">🎯 Our Mission</h2>
-            <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto text-gray-600">
+            <h2 class="text-4xl font-bold mb-8 text-radium-gradient">🎯 Our Mission</h2>
+            <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto text-gray-700">
                 At Freeza, our mission is to empower learners and professionals from every background with AI-driven tools that help them build, showcase, and grow their careers with confidence.
             </p>
-            <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mt-4 text-gray-600">
-                We believe in <span class="font-semibold text-indigo-600">skills over degrees</span>, <span class="font-semibold text-indigo-600">proof over promises</span>, and <span class="font-semibold text-indigo-600">AI over guesswork</span> – transforming how people learn, get verified, and get hired globally.
+            <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mt-4 text-gray-700">
+                We believe in <span class="font-semibold text-radium-gradient">skills over degrees</span>, <span class="font-semibold text-radium-gradient">proof over promises</span>, and <span class="font-semibold text-radium-gradient">AI over guesswork</span> – transforming how people learn, get verified, and get hired globally.
             </p>
-            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-10 inline-block text-indigo-600 hover:text-indigo-800 font-semibold text-lg border-b-2 border-indigo-600 hover:border-indigo-800 transition duration-300">
+            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-10 inline-block text-green-dark hover:text-green-darker-hover font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
                 🌐 Experience it live: Try the Freeza MVP →
             </a>
         </div>
     </section>
 
     <!-- Who Freeza Is For Section -->
-    <section class="py-16 md:py-24 bg-gray-50">
+    <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12">👥 Who Freeza Is For</h2>
+            <h2 class="text-4xl font-bold mb-12 text-radium-gradient">👥 Who Freeza Is For</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <p class="text-5xl mb-4">🧑‍🎓</p>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Students & Freshers</h3>
-                    <p class="text-gray-600">Across disciplines, ready to kickstart their careers.</p>
+                <div class="bg-light-green p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <p class="text-5xl mb-4 text-radium-gradient">🧑‍🎓</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-radium-gradient">Students & Freshers</h3>
+                    <p class="text-gray-700">Across disciplines, ready to kickstart their careers.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <p class="text-5xl mb-4">🔁</p>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Self-Taught Talent</h3>
-                    <p class="text-gray-600">And career changers seeking new opportunities.</p>
+                <div class="bg-light-green p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <p class="text-5xl mb-4 text-radium-gradient">🔁</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-radium-gradient">Self-Taught Talent</h3>
+                    <p class="text-gray-700">And career changers seeking new opportunities.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <p class="text-5xl mb-4">🏫</p>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Colleges & Universities</h3>
-                    <p class="text-gray-600">Empowering their students for future success.</p>
+                <div class="bg-light-green p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <p class="text-5xl mb-4 text-radium-gradient">🏫</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-radium-gradient">Colleges & Universities</h3>
+                    <p class="text-gray-700">Empowering their students for future success.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <p class="text-5xl mb-4">📚</p>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Coaching & Training</h3>
-                    <p class="text-gray-600">Institutes looking to verify and place their learners.</p>
+                <div class="bg-light-green p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <p class="text-5xl mb-4 text-radium-gradient">📚</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-radium-gradient">Coaching & Training</h3>
+                    <p class="text-gray-700">Institutes looking to verify and place their learners.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                    <p class="text-5xl mb-4">🏢</p>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Companies & Recruiters</h3>
-                    <p class="text-gray-600">Searching for verified, skilled talent.</p>
+                <div class="bg-light-green p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                    <p class="text-5xl mb-4 text-radium-gradient">🏢</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-radium-gradient">Companies & Recruiters</h3>
+                    <p class="text-gray-700">Searching for verified, skilled talent.</p>
                 </div>
             </div>
-            <div class="mt-12 text-lg">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">🎯 Ready to transform your journey?</h3>
+            <div class="mt-12 text-lg text-gray-700">
+                <h3 class="text-2xl font-semibold mb-4 text-radium-gradient">🎯 Ready to transform your journey?</h3>
                 <p>
-                    <a href="mailto:freezan@freeza.pro" class="text-indigo-600 hover:underline">📧 Reach us: freezan@freeza.pro</a> |
-                    <a href="tel:+918072401586" class="text-indigo-600 hover:underline">📞 +91 8072401586</a>
+                    <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline text-green-darker-hover">📧 Reach us: freezan@freeza.pro</a> |
+                    <a href="tel:+918072401586" class="text-green-dark hover:underline text-green-darker-hover">📞 +91 8072401586</a>
                 </p>
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-6 inline-block text-indigo-600 hover:text-indigo-800 font-semibold text-lg border-b-2 border-indigo-600 hover:border-indigo-800 transition duration-300">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-6 inline-block text-green-dark hover:text-green-darker-hover font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
                     🔗 Try the MVP
                 </a>
             </div>
@@ -140,68 +166,68 @@
     </section>
 
     <!-- MVP Features Section -->
-    <section id="mvp" class="py-16 md:py-24 bg-white">
+    <section id="mvp" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12">🚀 Try Our MVP Today</h2>
-            <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-gray-600 mb-10">
+            <h2 class="text-4xl font-bold mb-12 text-radium-gradient">🚀 Try Our MVP Today</h2>
+            <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-gray-700 mb-10">
                 Explore Freeza's beta version and experience:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-indigo-50 p-6 rounded-xl shadow-md flex items-center space-x-4">
-                    <span class="text-3xl text-indigo-600">✅</span>
+                <div class="bg-light-green p-6 rounded-xl shadow-md flex items-center space-x-4">
+                    <span class="text-3xl text-radium-gradient">✅</span>
                     <p class="text-xl font-medium text-gray-700">AI-Powered Portfolios</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-xl shadow-md flex items-center space-x-4">
-                    <span class="text-3xl text-indigo-600">✅</span>
+                <div class="bg-light-green p-6 rounded-xl shadow-md flex items-center space-x-4">
+                    <span class="text-3xl text-radium-gradient">✅</span>
                     <p class="text-xl font-medium text-gray-700">Career Mapping Tools</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-xl shadow-md flex items-center space-x-4">
-                    <span class="text-3xl text-indigo-600">✅</span>
+                <div class="bg-light-green p-6 rounded-xl shadow-md flex items-center space-x-4">
+                    <span class="text-3xl text-radium-gradient">✅</span>
                     <p class="text-xl font-medium text-gray-700">Resume & SOP Generator</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-xl shadow-md flex items-center space-x-4">
-                    <span class="text-3xl text-indigo-600">✅</span>
+                <div class="bg-light-green p-6 rounded-xl shadow-md flex items-center space-x-4">
+                    <span class="text-3xl text-radium-gradient">✅</span>
                     <p class="text-xl font-medium text-gray-700">Recruiter Dashboards</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-xl shadow-md flex items-center space-x-4">
-                    <span class="text-3xl text-indigo-600">✅</span>
+                <div class="bg-light-green p-6 rounded-xl shadow-md flex items-center space-x-4">
+                    <span class="text-3xl text-radium-gradient">✅</span>
                     <p class="text-xl font-medium text-gray-700">Cross-Domain Job Matching</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-xl shadow-md flex items-center space-x-4">
-                    <span class="text-3xl text-indigo-600">✅</span>
+                <div class="bg-light-green p-6 rounded-xl shadow-md flex items-center space-x-4">
+                    <span class="text-3xl text-radium-gradient">✅</span>
                     <p class="text-xl font-medium text-gray-700">NFT-Based Verified Credentials</p>
                 </div>
             </div>
-            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-12 btn-radium-green">
-                👉 Click to experience
+            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-12 btn-green-outline">
+                <span class="text-radium-gradient">👉 Click to experience</span>
             </a>
-            <a href="https://freeza.created.app/" target="_blank" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-semibold text-lg border-b-2 border-indigo-600 hover:border-indigo-800 transition duration-300">
+            <a href="https://freeza.created.app/" target="_blank" class="mt-4 inline-block text-green-dark hover:text-green-darker-hover font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
                 ✨ Get the Feel of What is Inside Freeza
             </a>
         </div>
     </section>
 
     <!-- Partner With Us Section -->
-    <section class="py-16 md:py-24 gradient-bg text-white rounded-t-3xl shadow-xl">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">🤝 Request Early Access / Partner With Us</h2>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+    <section class="bg-white py-16 md:py-24 text-center rounded-t-3xl shadow-xl">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-radium-gradient">🤝 Request Early Access / Partner With Us</h2>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-700">
                 We’re actively partnering with:
             </p>
             <div class="flex flex-wrap justify-center gap-6 mb-12 text-lg md:text-xl font-medium">
-                <span class="bg-white bg-opacity-20 px-6 py-3 rounded-full">Colleges & Universities</span>
-                <span class="bg-white bg-opacity-20 px-6 py-3 rounded-full">Companies & Startups</span>
-                <span class="bg-white bg-opacity-20 px-6 py-3 rounded-full">Coaching Institutions</span>
-                <span class="bg-white bg-opacity-20 px-6 py-3 rounded-full">Government & Nonprofits</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Colleges & Universities</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Companies & Startups</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Coaching Institutions</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Government & Nonprofits</span>
             </div>
-            <div class="text-xl md:text-2xl">
+            <div class="text-xl md:text-2xl text-gray-700">
                 <p>
-                    <a href="mailto:freezan@freeza.pro" class="text-white hover:underline">📧 Email us: freezan@freeza.pro</a>
+                    <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline text-green-darker-hover">📧 Email us: freezan@freeza.pro</a>
                 </p>
                 <p class="mt-2">
-                    <a href="tel:+918072401586" class="text-white hover:underline">📞 Call/WhatsApp: +91 8072401586</a>
+                    <a href="tel:+918072401586" class="text-green-dark hover:underline text-green-darker-hover">📞 Call/WhatsApp: +91 8072401586</a>
                 </p>
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-8 inline-block text-white hover:underline font-semibold text-lg border-b-2 border-white hover:border-gray-300 transition duration-300">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-8 inline-block text-green-dark hover:underline font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
                     🌐 MVP Access: https://freeza-talent-and-learning-276.created.app/
                 </a>
             </div>
@@ -209,27 +235,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-3xl">
+    <footer class="bg-white text-gray-700 py-8 text-center rounded-t-3xl shadow-xl">
         <div class="container mx-auto px-4">
             <h3 class="text-3xl font-bold mb-4 text-gradient">Freeza</h3>
             <p class="text-lg mb-4">One Platform. Infinite Possibilities.</p>
-            <p class="text-gray-400">
+            <p class="text-gray-600">
                 Whether you're a student, developer, college dean, or recruiter – Freeza is your gateway to verified talent and career growth.
             </p>
             <div class="mt-6">
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="text-white hover:underline font-semibold mx-4">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="text-green-dark hover:underline font-semibold mx-4">
                     🎓 Try Now
                 </a>
-                <a href="mailto:freezan@freeza.pro" class="text-white hover:underline font-semibold mx-4">
+                <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline font-semibold mx-4">
                     📧 Contact: freezan@freeza.pro
                 </a>
-                <a href="tel:+918072401586" class="text-white hover:underline font-semibold mx-4">
+                <a href="tel:+918072401586" class="text-green-dark hover:underline font-semibold mx-4">
                     📞 +91 8072401586
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="text-white hover:underline font-semibold mx-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="text-green-dark hover:underline font-semibold mx-4">
                     📝 Join the Waitlist
                 </a>
-                <a href="https://freeza.created.app/" target="_blank" class="text-white hover:underline font-semibold mx-4">
+                <a href="https://freeza.created.app/" target="_blank" class="text-green-dark hover:underline font-semibold mx-4">
                     ✨ Get the Feel of What is Inside Freeza
                 </a>
             </div>
