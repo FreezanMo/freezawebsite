@@ -11,12 +11,12 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff; /* Changed to white background */
+            background-color: #ffffff; /* White background */
             color: #334155; /* Darker text for contrast */
         }
-        /* The main gradient is now primarily for text, not backgrounds */
+        /* Radium Green to Blue Gradient for text */
         .text-radium-gradient {
-            background: linear-gradient(to right, #0f766e, #34d399); /* Dark to light green gradient */
+            background: linear-gradient(to right, #0f766e, #3b82f6); /* Dark green to blue gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text; /* Standard property */
@@ -24,36 +24,40 @@
         }
         /* This class is now used for the main Freeza logo text */
         .text-gradient {
-            background: linear-gradient(to right, #0f766e, #34d399); /* Dark to light green gradient */
+            background: linear-gradient(to right, #0f766e, #3b82f6); /* Dark green to blue gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Button styles: white background with green border and green gradient text */
-        .btn-green-outline {
-            @apply inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105;
-            background-color: white;
-            border: 2px solid #0f766e; /* Dark green border */
+        /* Link styles: no background/border, just gradient text */
+        .link-radium-gradient {
+            @apply inline-block px-4 py-2 text-lg font-semibold rounded-full transition duration-300 ease-in-out transform hover:scale-105;
+            /* No background, no border */
         }
-        .btn-green-outline:hover {
-            border-color: #065f46; /* Even darker green on hover */
-            box-shadow: 0 10px 15px -3px rgba(15, 118, 110, 0.2), 0 4px 6px -2px rgba(15, 118, 110, 0.1); /* Subtle green shadow */
+        .link-radium-gradient .text-radium-gradient {
+            /* Ensure the text gradient applies */
+            display: inline-block; /* Needed for background-clip: text to work properly on inline elements */
+        }
+        .link-radium-gradient:hover .text-radium-gradient {
+            /* Optional: slight change on hover if desired, e.g., slightly darker gradient */
+            filter: brightness(1.1); /* Makes the gradient slightly brighter on hover */
         }
 
-        /* Specific text colors that were indigo are now radium green */
-        .text-green-dark {
-            color: #0f766e; /* Darker green for emphasis */
+
+        /* Specific text colors for solid links and emphasis - now blue */
+        .text-blue-dark {
+            color: #2563eb; /* Darker blue for emphasis */
         }
-        .text-green-darker-hover:hover {
-            color: #065f46; /* Even darker green for hover */
+        .text-blue-darker-hover:hover {
+            color: #1d4ed8; /* Even darker blue for hover */
         }
-        .border-green-dark {
-            border-color: #0f766e;
+        .border-blue-dark {
+            border-color: #2563eb;
         }
-        .hover\:border-green-darker:hover {
-            border-color: #065f46;
+        .hover\:border-blue-darker:hover {
+            border-color: #1d4ed8;
         }
-        /* Light green background for feature boxes */
+        /* Light green background for feature boxes (remains green) */
         .bg-light-green {
             background-color: #ecfdf5;
         }
@@ -66,9 +70,9 @@
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold text-gradient rounded-md p-2">Freeza</a>
             <nav class="flex space-x-4">
-                <a href="#mvp" class="btn-green-outline"><span class="text-radium-gradient">Try Our MVP Now</span></a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="btn-green-outline"><span class="text-radium-gradient">Join the Waitlist</span></a>
-                <a href="https://freeza.created.app/" target="_blank" class="btn-green-outline"><span class="text-radium-gradient">Get the Feel of Freeza</span></a>
+                <a href="#mvp" class="link-radium-gradient"><span class="text-radium-gradient">Try Our MVP Now</span></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="link-radium-gradient"><span class="text-radium-gradient">Join the Waitlist</span></a>
+                <a href="https://freeza.created.app/" target="_blank" class="link-radium-gradient"><span class="text-radium-gradient">Get the Feel of Freeza</span></a>
             </nav>
         </div>
     </header>
@@ -83,23 +87,23 @@
                 The Ultimate AI-Powered Talent, Learning & Hiring Platform. <br> Empowering every stakeholder in the 21st-century talent economy.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="btn-green-outline animate-bounce">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="link-radium-gradient animate-bounce">
                     <span class="text-radium-gradient">🚀 Try Our MVP Now</span>
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="btn-green-outline">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="link-radium-gradient">
                     <span class="text-radium-gradient">📝 Join the Waitlist</span>
                 </a>
             </div>
             <div class="mt-8">
-                <a href="https://freeza.created.app/" target="_blank" class="btn-green-outline">
+                <a href="https://freeza.created.app/" target="_blank" class="link-radium-gradient">
                     <span class="text-radium-gradient">✨ Get the Feel of What is Inside Freeza</span>
                 </a>
             </div>
             <div class="mt-12 text-lg text-gray-700">
                 <p>📩 Request Early Access or 💼 Partner With Us:</p>
                 <p class="mt-2">
-                    <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline text-green-darker-hover">📧 Email: freezan@freeza.pro</a> |
-                    <a href="tel:+918072401586" class="text-green-dark hover:underline text-green-darker-hover">📞 Phone: +91 8072401586</a>
+                    <a href="mailto:freezan@freeza.pro" class="text-blue-dark hover:underline text-blue-darker-hover">📧 Email: freezan@freeza.pro</a> |
+                    <a href="tel:+918072401586" class="text-blue-dark hover:underline text-blue-darker-hover">📞 Phone: +91 8072401586</a>
                 </p>
             </div>
         </div>
@@ -115,7 +119,7 @@
             <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mt-4 text-gray-700">
                 We believe in <span class="font-semibold text-radium-gradient">skills over degrees</span>, <span class="font-semibold text-radium-gradient">proof over promises</span>, and <span class="font-semibold text-radium-gradient">AI over guesswork</span> – transforming how people learn, get verified, and get hired globally.
             </p>
-            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-10 inline-block text-green-dark hover:text-green-darker-hover font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
+            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-10 inline-block text-blue-dark hover:text-blue-darker-hover font-semibold text-lg border-b-2 border-blue-dark hover:border-blue-darker transition duration-300">
                 🌐 Experience it live: Try the Freeza MVP →
             </a>
         </div>
@@ -155,10 +159,10 @@
             <div class="mt-12 text-lg text-gray-700">
                 <h3 class="text-2xl font-semibold mb-4 text-radium-gradient">🎯 Ready to transform your journey?</h3>
                 <p>
-                    <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline text-green-darker-hover">📧 Reach us: freezan@freeza.pro</a> |
-                    <a href="tel:+918072401586" class="text-green-dark hover:underline text-green-darker-hover">📞 +91 8072401586</a>
+                    <a href="mailto:freezan@freeza.pro" class="text-blue-dark hover:underline text-blue-darker-hover">📧 Email: freezan@freeza.pro</a> |
+                    <a href="tel:+918072401586" class="text-blue-dark hover:underline text-blue-darker-hover">📞 +91 8072401586</a>
                 </p>
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-6 inline-block text-green-dark hover:text-green-darker-hover font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-6 inline-block text-blue-dark hover:text-blue-darker-hover font-semibold text-lg border-b-2 border-blue-dark hover:border-blue-darker transition duration-300">
                     🔗 Try the MVP
                 </a>
             </div>
@@ -198,10 +202,10 @@
                     <p class="text-xl font-medium text-gray-700">NFT-Based Verified Credentials</p>
                 </div>
             </div>
-            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-12 btn-green-outline">
+            <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-12 link-radium-gradient">
                 <span class="text-radium-gradient">👉 Click to experience</span>
             </a>
-            <a href="https://freeza.created.app/" target="_blank" class="mt-4 inline-block text-green-dark hover:text-green-darker-hover font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
+            <a href="https://freeza.created.app/" target="_blank" class="mt-4 inline-block text-blue-dark hover:text-blue-darker-hover font-semibold text-lg border-b-2 border-blue-dark hover:border-blue-darker transition duration-300">
                 ✨ Get the Feel of What is Inside Freeza
             </a>
         </div>
@@ -215,19 +219,19 @@
                 We’re actively partnering with:
             </p>
             <div class="flex flex-wrap justify-center gap-6 mb-12 text-lg md:text-xl font-medium">
-                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Colleges & Universities</span>
-                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Companies & Startups</span>
-                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Coaching Institutions</span>
-                <span class="bg-light-green px-6 py-3 rounded-full text-green-dark">Government & Nonprofits</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-radium-gradient">Colleges & Universities</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-radium-gradient">Companies & Startups</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-radium-gradient">Coaching Institutions</span>
+                <span class="bg-light-green px-6 py-3 rounded-full text-radium-gradient">Government & Nonprofits</span>
             </div>
             <div class="text-xl md:text-2xl text-gray-700">
                 <p>
-                    <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline text-green-darker-hover">📧 Email us: freezan@freeza.pro</a>
+                    <a href="mailto:freezan@freeza.pro" class="text-blue-dark hover:underline text-blue-darker-hover">📧 Email us: freezan@freeza.pro</a>
                 </p>
                 <p class="mt-2">
-                    <a href="tel:+918072401586" class="text-green-dark hover:underline text-green-darker-hover">📞 Call/WhatsApp: +91 8072401586</a>
+                    <a href="tel:+918072401586" class="text-blue-dark hover:underline text-blue-darker-hover">📞 Call/WhatsApp: +91 8072401586</a>
                 </p>
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-8 inline-block text-green-dark hover:underline font-semibold text-lg border-b-2 border-green-dark hover:border-green-darker transition duration-300">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="mt-8 inline-block text-blue-dark hover:underline font-semibold text-lg border-b-2 border-blue-dark hover:border-blue-darker transition duration-300">
                     🌐 MVP Access: https://freeza-talent-and-learning-276.created.app/
                 </a>
             </div>
@@ -243,19 +247,19 @@
                 Whether you're a student, developer, college dean, or recruiter – Freeza is your gateway to verified talent and career growth.
             </p>
             <div class="mt-6">
-                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="text-green-dark hover:underline font-semibold mx-4">
+                <a href="https://freeza-talent-and-learning-276.created.app/" target="_blank" class="text-blue-dark hover:underline font-semibold mx-4">
                     🎓 Try Now
                 </a>
-                <a href="mailto:freezan@freeza.pro" class="text-green-dark hover:underline font-semibold mx-4">
+                <a href="mailto:freezan@freeza.pro" class="text-blue-dark hover:underline font-semibold mx-4">
                     📧 Contact: freezan@freeza.pro
                 </a>
-                <a href="tel:+918072401586" class="text-green-dark hover:underline font-semibold mx-4">
+                <a href="tel:+918072401586" target="_blank" class="text-blue-dark hover:underline font-semibold mx-4">
                     📞 +91 8072401586
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="text-green-dark hover:underline font-semibold mx-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNxkd6vtHoMHgk_yDCTfymn1ghj0mST6xtwXhTJgqBJ5WPLA/viewform?usp=header" target="_blank" class="text-blue-dark hover:underline font-semibold mx-4">
                     📝 Join the Waitlist
                 </a>
-                <a href="https://freeza.created.app/" target="_blank" class="text-green-dark hover:underline font-semibold mx-4">
+                <a href="https://freeza.created.app/" target="_blank" class="text-blue-dark hover:underline font-semibold mx-4">
                     ✨ Get the Feel of What is Inside Freeza
                 </a>
             </div>
